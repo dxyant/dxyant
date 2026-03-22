@@ -88,41 +88,6 @@ const deyant = {
   <img src="https://raw.githubusercontent.com/dxyant/dxyant/output/github-contribution-grid-snake-dark.svg" alt="Snake animation"/>
 </p>
 
----
-
-## ⚙️ Snake Animation Setup
-
-> **Note:** To enable the snake animation above, create the file `.github/workflows/snake.yml` in this repo with the following content:
-
-```yaml
-name: Generate Snake Animation
-
-on:
-  schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
-
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: dxyant
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-> Then go to **Actions** tab → run the workflow manually once → the snake will appear!
-
----
-
 <p align="center">
   <i>"The magic you're looking for is in the work you're avoiding."</i>
   <br/><br/>
